@@ -1,0 +1,730 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.fundo {
+    background-image: url('../imagens/Where\ are\ WordPress\ Pages\ Stored_\ \(Answered\).jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+}
+
+.fundo::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: lighten;
+}
+
+.limite {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.topo {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: DimGrey;
+    z-index: 1;
+}
+
+.links {
+    width: 500px;
+}
+
+.menu a {
+    display: none;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+nav a {
+    padding: 10px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 500;
+    color: DarkSlateGrey;
+    transition: 0.5s;
+    z-index: 1;
+    border-radius: 30px;
+}
+
+nav a:hover {
+    background-color: #ccc;
+    color: #59b09f5e;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+.perfil {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container_perfil {
+    position: relative;
+    z-index: 1;
+}
+
+.efeito {
+    position: absolute;
+    top: -43%;
+    left: 5%;
+    background-color: #59b09f5e;
+    width: 365px;
+    height: 365px;
+    border-radius: 50%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto {
+    background-color: #59b09e;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto img {
+    width: 90%;
+    border-radius: 50%;
+}
+
+.redes_sociais {
+    position: relative;
+    background-color: #59b09e;
+    width: 400px;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 1px 1px 2px DimGrey;
+}
+
+.informacao_perfil {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.informacao_perfil h1 {
+    text-align: center;
+    margin-top: 200px;
+    padding: 10px;
+    color: #ccc;
+    font-size: 3rem;
+}
+
+.informacao_perfil span {
+    color: #ccc;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.icones {
+    width: 180px;
+    margin: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.icone a {
+    padding: 10px;
+}
+
+.icones img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.icones img:hover {
+    background-color: DimGrey;
+    width: 40px;
+    height: 40px;
+    transition: 0.5s;
+    border-radius: 50%;
+}
+
+.cor_fundo {
+    background-color: #59b09e;
+    padding-bottom: 40px;
+}
+
+.sobre_mim {
+    margin: 0 auto;
+    text-align: center;
+    width: 800px;
+}
+
+h2 {
+    padding: 30px 0 10px 0;
+    font-size: 2rem;
+    color: DarkSlateGrey;
+    text-align: center;
+}
+
+.sobre_mim p {
+    width: 650px;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    line-height: 30px;
+    color: white;
+}
+
+.container_detlhe_interesse {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.detalhes_pessoais {
+    width: 100%;
+}
+
+.detalhes_pessoais span {
+    font-size: 1.5rem;
+    color: DimGrey;
+    font-weight: 500;
+    margin: 0 0 20px 62px;
+}
+
+table {
+    text-align: left;
+    display: flex;
+    padding: 30px;
+    border-collapse: separate;
+    font-size: 1.2rem;
+}
+
+th,
+td {
+    color: white;
+}
+
+td a {
+    color: white;
+    text-decoration: none;
+}
+
+td a:hover {
+    color: azure;
+    transition: 0.5s;
+}
+
+.status {
+    background-color: DimGrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 30px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.meus_interesses {
+    width: 50%;
+    padding: 0 0 0 30px;
+}
+
+.meus_interesses span,
+.finalizado span,
+.cursando span {
+    font-size: 1.5rem;
+    color: DimGrey;
+    font-weight: 500;
+    margin: 12px;
+}
+
+.icones_interesse .imagens_interesses {
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 200px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.imagens_interesses div {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 1px 1px 3px black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+figcaption {
+    color: black;
+    padding: 5px;
+}
+
+.icones_interesse img {
+    width: 30px;
+}
+
+.cor_fundo_escuro_habilidade {
+    background-color: MediumTurquoise;
+    height: 380px;
+}
+
+.cursando_finalizados {
+    display: flex;
+    justify-content: space-around;
+}
+
+.finalizado {
+    width: 250px;
+    height: 150px;
+}
+
+.cursos_final {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 30px 0 0;
+    text-align: center;
+}
+
+.cursos_andamento {
+    padding: 30px 0 0 12px;
+    text-align: center;
+}
+
+.html,
+.css,
+.javascript {
+    width: 90px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.cursando_finalizados img {
+    width: 50px;
+}
+
+.projetos {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.cor_fundo_escuro {
+    position: relative;
+    background-color: MediumTurquoise;
+}
+
+.container_formulario {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 350px;
+}
+
+.voltar {
+    width: 65px;
+    height: 65px;
+    position: fixed;
+    right: 3%;
+    bottom: 3%;
+}
+
+.voltar img {
+    width: 100%;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+}
+
+label {
+    display: block;
+    font-size: 1.5rem;
+    color: white;
+    padding: 20px;
+}
+
+textarea {
+    background-color: #59b09e;
+    width: 500px;
+    height: 180px;
+    color: white;
+    font-size: 1rem;
+}
+
+button {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    color: #59b09e;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px white;
+    margin: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+@media (min-width: 325px) and (max-width: 768px) {
+    main {
+        overflow-x: hidden;
+    }
+
+    .topo {
+        width: 100%;
+        height: 100px;
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+
+    .menu {
+        z-index: 1;
+    }
+
+    .menu a {
+        display: inline;
+        z-index: 1;
+    }
+
+    .menu img {
+        width: 30px;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .perfil {
+        top: 50%;
+    }
+
+    .efeito {
+        width: 240px;
+        height: 240px;
+        position: absolute;
+        top: -30%;
+        left: 15%;
+    }
+
+    .foto {
+        width: 190px;
+        height: 190px;
+    }
+
+    .redes_sociais {
+        width: 330px;
+        height: 330px;
+    }
+
+    .informacao_perfil h1 {
+        font-size: 2.8rem;
+        margin-top: 120px;
+    }
+
+    .sobre_mim {
+        width: 330px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .sobre_mim p {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .container_detlhe_interesse {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .detalhes_pessoais span {
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    table {
+        text-align: left;
+        display: flex;
+        padding: 30px 0;
+        font-size: 1rem;
+    }
+
+    td {
+        padding: 6px 5px;
+    }
+
+    th {
+        padding: 7px 20px;
+    }
+
+    .meus_interesses {
+        width: 100%;
+    }
+
+    .icones_interesse .imagens_interesses {
+        display: flex;
+        flex-wrap: wrap;
+        width: 200px;
+        height: 200px;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px auto;
+    }
+
+    .cor_fundo_escuro_habilidade {
+        height: 430px;
+    }
+
+    .cursando_finalizados {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .finalizado {
+        width: 250px;
+        height: 150px;
+        margin-bottom: 20px;
+    }
+
+    .finalizado span,
+    .cursando span {
+        display: block;
+        text-align: center;
+    }
+
+    .cursos_final {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .cursos_andamento {
+        text-align: center;
+        padding: 0 17px;
+    }
+
+    .projetos {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .container_formulario {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    textarea {
+        background-color: #252a30;
+        width: 70%;
+        height: 180px;
+        color: #ccc;
+        font-size: 1rem;
+    }
+
+    button {
+        width: 150px;
+        height: 40px;
+        background-color: #59b09e;
+        color: #ccc;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 1px 1px 2px #59b09e;
+        margin-top: 30px;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+}
+
+@media (min-width: 769px) {
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    .topo {
+        justify-content: space-around;
+    }
+
+    .links {
+        width: 350px;
+    }
+
+    .menu img {
+        display: none;
+    }
+
+    nav {
+        justify-content: space-around;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    .perfil {
+        top: 53%;
+    }
+
+    .efeito {
+        width: 210px;
+        height: 210px;
+        position: absolute;
+        top: -30%;
+        left: 19%;
+    }
+
+    .foto {
+        width: 180px;
+        height: 180px;
+    }
+
+    .redes_sociais {
+        width: 330px;
+        height: 330px;
+    }
+
+    .informacao_perfil h1 {
+        font-size: 2.8rem;
+        margin-top: 90px;
+    }
+
+    .informacao_perfil span {
+        font-size: 1rem;
+    }
+
+    .sobre_mim {
+        width: 700px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .sobre_mim p {
+        font-size: 1.1rem;
+    }
+
+    .detalhes_pessoais span {
+        font-size: 1.4rem;
+    }
+
+    table {
+        font-size: 1rem;
+    }
+
+    th,
+    td {
+        padding: 6px 20px;
+    }
+
+    .meus_interesses span,
+    .finalizado span,
+    .cursando span {
+        font-size: 1.4rem;
+    }
+
+    .finalizado {
+        width: 230px;
+        height: 120px;
+    }
+
+    .cursos_final {
+        justify-content: space-between;
+    }
+
+    .projetos {
+        justify-content: space-around;
+    }
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #59b09e; /* Altera a cor do rodapé para a cor desejada */
+    color: DimGrey;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0; /* Adicione esta linha para centralizar */
+}
+
+.carrossel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* Para suporte ao Safari/iOS */
+}
+
+.imagem-carrossel {
+    flex: 0 0 auto;
+    width: 100px; /* Largura da imagem */
+    scroll-snap-align: start;
+    margin-right: 10px; /* Espaçamento entre as imagens */
+}
+
+
+
