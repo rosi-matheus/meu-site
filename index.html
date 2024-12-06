@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="./estilos/estilos.css">
+    <link rel="stylesheet" href="./estilos/responsivel.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Roboto:wght@200;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="inicio">
+        <div class="fundo">
+            <div class="limite">
+                <div class="topo">
+                    <div class="logo">
+                        <span>💻 Sejam Bem-Vindos!</span>
+                    </div>
+                    <div class="menu">
+                        <a href="#"><img src="imagens/menu-aberto.png" alt="menu" aria-label="Abrir menu"></a>
+                    </div>
+                    <div class="links">
+                        <nav>
+                            <a href="#Sobre_mim">Sobre mim</a>
+                            <a href="#Servicos">Serviços</a>
+                            <a href="#Saudacao">Saudação</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="topo">
+            <div class="limite">
+                <div class="perfil">
+                    <div class="container_perfil">
+                        <div class="efeito">
+                            <div class="foto">
+                                <img src="imagens/minha.png" alt="Foto minha de perfil">
+                            </div>
+                        </div>
+                        <div class="redes_sociais">
+                            <div class="informacao_perfil">
+                                <h1>Rosiane Aparecida da Silva</h1>
+                                <span>Developer Full-Stack</span>
+                                <div class="icones">
+                                    <a href="https://www.github.com/rosi-matheus" target="_blank"><img src="imagens/github.png" alt="Github"></a>
+                                    <a href="https://www.linkedin.com/in/rosiane-aparecida-da-silva-b06323258" target="_blank"><img src="imagens/linkedin.png" alt="Linkedin"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cor_fundo_escuro_habilidade" id="Sobre_mim">
+            <div class="limite">
+                <h2>Habilidades e Objetivos</h2>
+                <div class="habilidades_objetivos">
+                    <div class="habilidades">
+                        <h3>Habilidades</h3>
+                        <p>
+                            💞️<strong>Soft skills:</strong> Pensamento Criativo, Resiliência, Confiabilidade, Empatia e Aprendizagem Contínua.<br>
+                            💻<strong>Hard skills:</strong> Dev. Full Stack júnior, Engenharia de dados. <br>
+                            📚<strong>Cursando:</strong> Técnico em Informática 
+                        </p>
+                    </div>
+                    <div class="objetivos">
+                        <h3>Objetivos</h3>
+                        <p>
+                            💻 Freelancers, estágios e contratações efetivas.<br>
+                            💞️ Me firmar como uma desenvolvedora de sucesso.<br>
+                            📚 <span class="centralizar">Evoluir sempre 🚀</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cor_fundo_servicos" id="Servicos">
+            <div class="limite">
+                <h2>Serviços</h2>
+                <div class="servicos_lista">
+                    <div>
+                        <h3>Desenvolvimento de Sites</h3>
+                        <p>Criação de sites responsivos e personalizados para atender às necessidades do cliente.</p>
+                    </div>
+                    <div>
+                        <h3>Análise de Dados</h3>
+                        <p>Processamento e análise de dados para gerar insights valiosos para seu negócio.</p>
+                    </div>
+                    <div>
+                        <h3>Tradução de Textos</h3>
+                        <p>Tradução precisa e fluente de textos de diferentes idiomas.</p>
+                    </div>
+                    <div>
+                        <h3>Assistência Virtual</h3>
+                        <p>Suporte remoto para otimização de tarefas administrativas e organização de agendas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cor_fundo_saudacao" id="Saudacao">
+            <div class="limite">
+                <div class="container_saudacao">
+                    <div align="center">
+                        <img height="550px" src="https://hollywoodforevertv.com.br/media/uploads/jenna-ortega-gif.gif" alt="Imagem de Saudação" />
+                    </div>
+                    <h2>💖 Agradeço pela visita 💖</h2>
+                    <p>Desenvolvido por Rosiane Aparecida da Silva</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="voltar" id="voltarTopo">
+        <img src="imagens/seta.png" alt="seta.png">
+    </div>
+
+    <script>
+        window.onscroll = function() {
+            var voltar = document.getElementById("voltarTopo");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                voltar.style.display = "block";
+            } else {
+                voltar.style.display = "none";
+            }
+        };
+
+        document.getElementById("voltarTopo").onclick = function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+    </script>
+</body>
+</html>
