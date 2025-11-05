@@ -64,4 +64,4 @@ Este projeto é de uso pessoal e profissional.
 
 ---
 
-*Desenvolvido com 💻 por Rosiane Aparecida da Silva*
+*Desenvolvido por Rosiane Aparecida da Silva*
