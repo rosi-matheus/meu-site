@@ -9,7 +9,6 @@
 ### 2. **Perfil (Topo)**
 - Foto de perfil
 - Nome e cargo
-- Links para redes sociais (GitHub e LinkedIn)
 
 ### 3. **Habilidades e Objetivos**
 - **Soft Skills**: Pensamento criativo, resiliência, confiabilidade, empatia e aprendizagem contínua
@@ -22,9 +21,10 @@
 - Tradução de Textos
 - Assistência Virtual
 
-### 5. **Saudação**
+### 5. **Contato**
 - Mensagem de agradecimento pela visita
 - Créditos de desenvolvimento
+- Links para redes sociais (GitHub e LinkedIn)
 
 ## ✨ Funcionalidades
 
