@@ -1,24 +1,51 @@
+/* estilos.css */
 /* Estilo base para o corpo e fontes */
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.8;
+:root {
+    --rosa-principal: #E75480;
+    --rosa-escuro: #C2185B;
+    --rosa-claro: #F8BBD0;
+    --rosa-suave: #FFF0F5;
+    --preto: #000000;
+    --branco: #FFFFFF;
+    --cinza-claro: #F8F9FA;
+    --texto-escuro: #333333;
+    --texto-claro: #6C757D;
+    --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transicao: all 0.3s ease;
+}
+
+* {
     margin: 0;
     padding: 0;
-    background-color: black;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--rosa-suave);
+    color: var(--texto-escuro);
+    overflow-x: hidden;
 }
 
 /* Centraliza e limita a largura do conteúdo */
 .limite {
-    width: 70%;
-    max-width: 1000px;
+    width: 85%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 /* Estilo para o cabeçalho */
 header {
-    background-color: #FFF5EE;
-    color: black;
-    padding: 20px 0;
+    background-color: var(--preto);
+    color: var(--branco);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--sombra);
 }
 
 header .topo {
@@ -28,180 +55,674 @@ header .topo {
 }
 
 header .logo span {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
+    color: var(--branco);
 }
 
 header .menu img {
     width: 30px;
     cursor: pointer;
+    display: none;
+}
+
+header .links nav {
+    display: flex;
+    gap: 25px;
 }
 
 header nav a {
-    color: black;
+    color: var(--branco);
     text-decoration: none;
-    padding: 10px;
-    font-weight: 900;
+    padding: 8px 15px;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: var(--transicao);
+    position: relative;
 }
 
 header nav a:hover {
-    background-color: #FFE4E1;
-    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--rosa-principal);
+    transition: var(--transicao);
+    transform: translateX(-50%);
+}
+
+header nav a:hover::after {
+    width: 80%;
 }
 
 /* Estilo para as seções do portfólio */
 section {
-    padding: 50px 0;
+    padding: 80px 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    line-height: 1.3;
 }
 
 h2 {
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 32px;
+    color: var(--preto);
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--rosa-principal);
+    border-radius: 2px;
 }
 
 h3 {
     font-size: 22px;
-    color: #333;
-    margin-bottom: 10px;
+    color: var(--preto);
+    margin-bottom: 25px;
 }
 
 p {
-    color: #555;
+    color: var(--texto-claro);
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
-/* Estilo para as seções específicas */
+/* Estilo para a seção do topo - FOTO E TEXTO AUMENTADOS */
 #topo {
-    background-color: white;
+    background: linear-gradient(135deg, var(--rosa-principal) 0%, var(--rosa-escuro) 100%);
+    color: var(--branco);
+    padding: 120px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .perfil {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .container_perfil {
     display: flex;
     align-items: center;
+    gap: 60px;
+    width: 100%;
+}
+
+.efeito {
+    position: relative;
+    border-radius: 50%;
+    padding: 15px;
+    background: linear-gradient(135deg, var(--rosa-principal), var(--rosa-claro));
+    box-shadow: var(--sombra);
+    animation: flutuar 6s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes flutuar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
 }
 
 .foto img {
-    width: 150px;
-    height: 150px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
     object-fit: cover;
+    border: 8px solid var(--branco);
+    display: block;
 }
 
-.redes_sociais .informacao_perfil {
-    margin-left: 20px;
+.informacao_perfil {
+    flex: 1;
 }
 
-.icones a {
-    margin-right: 10px;
+.informacao_perfil h1 {
+    font-size: 48px;
+    color: var(--branco);
+    margin-bottom: 15px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.icones img {
-    width: 30px;
-    height: 30px;
+.informacao_perfil span {
+    font-size: 28px;
+    color: rgba(255, 255, 255, 0.95);
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 500;
 }
 
-/* Removendo a cor escura da seção de habilidades */
+.chamada {
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+    margin-top: 25px;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.destaque {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 18px;
+    margin-top: 12px;
+    padding-left: 10px;
+    border-left: 3px solid var(--rosa-claro);
+}
+
+/* Estilo para a seção de habilidades - AUMENTADA */
 .cor_fundo_escuro_habilidade {
-    background-color: white; /* Cor de fundo original */
-    color: black; /* Cor do texto */
+    background-color: var(--branco);
+    color: var(--texto-escuro);
+    padding: 100px 0;
 }
 
 .habilidades_objetivos {
     display: flex;
     justify-content: space-between;
+    gap: 40px;
 }
 
 .habilidades, .objetivos {
-    width: 48%;
+    flex: 1;
+    padding: 40px;
+    background-color: var(--branco);
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+    transition: var(--transicao);
+    border-top: 4px solid var(--rosa-claro);
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.habilidades:hover, .objetivos:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.habilidades h3, .objetivos h3 {
+    color: var(--preto);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+}
+
+.habilidades h3::before, .objetivos h3::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--rosa-principal);
+    border-radius: 50%;
+}
+
+.conteudo_habilidades, .conteudo_objetivos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 1;
+}
+
+.habilidade_item, .objetivo_item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    background-color: var(--rosa-suave);
+    border-radius: 10px;
+    transition: var(--transicao);
+}
+
+.habilidade_item:hover, .objetivo_item:hover {
+    transform: translateX(5px);
+    background-color: var(--rosa-claro);
+}
+
+.icone {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.texto_habilidade, .texto_objetivo {
+    color: var(--texto-escuro);
+    line-height: 1.6;
+}
+
+.texto_habilidade strong, .texto_objetivo strong {
+    color: var(--rosa-escuro);
+}
+
+.centralizar {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    color: var(--rosa-principal);
 }
 
 /* Estilo para os serviços */
 .cor_fundo_servicos {
-    background-color: #f9f9f9;
+    background-color: var(--rosa-suave);
+    padding: 100px 0;
 }
 
 .servicos_lista {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 30px;
 }
 
-.servicos_lista div {
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.servico-card {
+    padding: 40px 30px;
+    background-color: var(--branco);
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+    transition: var(--transicao);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.servico-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--rosa-principal), var(--rosa-escuro));
+    transition: var(--transicao);
+}
+
+.servico-card:hover {
+    transform: translateY(-10px);
+}
+
+.servico-card:hover::before {
+    height: 8px;
+}
+
+.servico-icone {
+    font-size: 40px;
+    margin-bottom: 20px;
 }
 
 .servicos_lista h3 {
-    color: #333;
-    margin-bottom: 10px;
+    color: var(--preto);
+    margin-bottom: 15px;
+    font-size: 22px;
 }
 
 .servicos_lista p {
-    color: #555;
+    color: var(--texto-claro);
+    line-height: 1.6;
 }
 
-/* Estilo para a seção de saudação */
-.cor_fundo_saudacao {
-    background-color: white;
+/* Estilo para a seção de contato */
+.cor_fundo_contato {
+    background: linear-gradient(135deg, var(--rosa-principal) 0%, var(--rosa-escuro) 100%);
+    color: var(--branco);
+    padding: 80px 0;
+}
+
+.container_contato {
+    padding: 40px 0;
+}
+
+.contato_conteudo {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.contato_info {
+    flex: 1;
+}
+
+.contato_info h2 {
+    color: var(--branco);
+    margin-bottom: 20px;
+}
+
+.contato_info h2::after {
+    background-color: var(--branco);
+}
+
+.contato_info p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.icones_contato {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.botao_contato {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--branco);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: var(--transicao);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.botao_contato:hover {
+    background-color: var(--branco);
+    color: var(--rosa-principal);
+    transform: translateY(-5px);
+}
+
+.botao_contato img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+.botao_contato:hover img {
+    filter: none;
+}
+
+.agradecimento {
+    font-size: 20px !important;
+    font-weight: bold;
+    margin-top: 30px !important;
+}
+
+.assinatura {
+    font-style: italic;
+    margin-top: 10px !important;
+}
+
+.contato_imagem {
+    flex: 1;
     text-align: center;
 }
 
-.container_saudacao img {
+.contato_imagem img {
     max-width: 100%;
     height: auto;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
 }
 
-/* Estilo para o botão voltar ao topo */
+/* BOTÃO VOLTAR AO TOPO */
 .voltar {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #fff;
-    padding: 10px;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--rosa-principal);
     border-radius: 50%;
     z-index: 1000;
-    display: none;
-    transition: opacity 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transicao);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border: 2px solid var(--branco);
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.voltar.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .voltar:hover {
-    transform: scale(1.1);
+    transform: translateY(-5px) scale(1.1);
+    background-color: var(--rosa-escuro);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.voltar img {
-    width: 30px;
-    height: 30px;
-
+.voltar svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--branco);
+    transition: var(--transicao);
+}
 
 /* Estilos para responsividade */
-@media (max-width: 768px) {
-    header .topo {
+@media (max-width: 1200px) {
+    .foto img {
+        width: 320px;
+        height: 320px;
+    }
+    
+    .informacao_perfil h1 {
+        font-size: 42px;
+    }
+    
+    .informacao_perfil span {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 992px) {
+    .limite {
+        width: 90%;
+    }
+    
+    .container_perfil {
         flex-direction: column;
-        align-items: flex-start;
+        text-align: center;
+        gap: 40px;
     }
-
-    header nav {
-        display: none;
+    
+    .foto img {
+        width: 280px;
+        height: 280px;
     }
-
-    .servicos_lista {
-        grid-template-columns: 1fr;
+    
+    .informacao_perfil h1 {
+        font-size: 36px;
     }
-
+    
+    .informacao_perfil span {
+        font-size: 22px;
+    }
+    
     .habilidades_objetivos {
         flex-direction: column;
     }
-
+    
+    .contato_conteudo {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
     .habilidades, .objetivos {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    header .menu img {
+        display: block;
+    }
+    
+    header .links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
-        margin-bottom: 20px;
+        background-color: var(--preto);
+        padding: 20px;
+        box-shadow: var(--sombra);
+    }
+    
+    header .links.active {
+        display: block;
+    }
+    
+    header .links nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .servicos_lista {
+        grid-template-columns: 1fr;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    #topo {
+        padding: 80px 0;
+        min-height: auto;
+    }
+    
+    .cor_fundo_escuro_habilidade,
+    .cor_fundo_servicos {
+        padding: 60px 0;
+    }
+    
+    .foto img {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .informacao_perfil h1 {
+        font-size: 32px;
+    }
+    
+    .informacao_perfil span {
+        font-size: 20px;
+    }
+    
+    .chamada {
+        font-size: 18px;
+    }
+    
+    .destaque {
+        font-size: 16px;
+    }
+    
+    h2 {
+        font-size: 28px;
+    }
+    
+    .icones_contato {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .habilidades, .objetivos {
+        padding: 30px;
+    }
+    
+    .voltar {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .voltar svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .limite {
+        width: 95%;
+    }
+    
+    .foto img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .informacao_perfil h1 {
+        font-size: 28px;
+    }
+    
+    .informacao_perfil span {
+        font-size: 18px;
+    }
+    
+    .chamada {
+        font-size: 16px;
+    }
+    
+    .destaque {
+        font-size: 14px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    section {
+        padding: 40px 0;
+    }
+    
+    #topo {
+        padding: 60px 0;
+    }
+    
+    .cor_fundo_escuro_habilidade,
+    .cor_fundo_servicos {
+        padding: 40px 0;
+    }
+    
+    .habilidades, .objetivos {
+        padding: 20px;
+    }
+    
+    .servico-card {
+        padding: 25px 20px;
+        min-height: auto;
+    }
+    
+    .voltar {
+        bottom: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .voltar svg {
+        width: 18px;
+        height: 18px;
     }
 }
